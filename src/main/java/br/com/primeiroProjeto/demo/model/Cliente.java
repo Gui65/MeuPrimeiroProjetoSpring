@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -37,16 +38,20 @@ public class Cliente {
 	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private List<Produto> produtos;
+	
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	private Endereco endereco;
 
 	public Cliente() {
 	}
 
-	public Cliente(String nomeCliente, String email, Calendar dataNascimento, List<Produto> produtos) {
+	public Cliente(String nomeCliente, String email, Calendar dataNascimento, List<Produto> produtos, Endereco endereco) {
 		super();
 		this.nomeCliente = nomeCliente;
 		this.email = email;
 		this.dataNascimento = dataNascimento;
 		this.produtos = produtos;
+		this.endereco = endereco;
 	}
 
 	public Long getId() {

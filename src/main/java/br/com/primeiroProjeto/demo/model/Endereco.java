@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -27,7 +28,10 @@ public class Endereco {
 
 	@Column(name = "nm_cidade")
 	private String cidade;
-
+	
+	@OneToOne(mappedBy = "endereco")
+	private Cliente cliente;
+	
 	public Endereco() {
 	}
 
@@ -69,4 +73,13 @@ public class Endereco {
 		this.cidade = cidade;
 	}
 
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+	
+	
 }

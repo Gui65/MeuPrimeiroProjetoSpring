@@ -8,7 +8,8 @@ import br.com.primeiroProjeto.demo.repository.ClienteRepository;
 
 @Service
 public class ClienteService {
-
+	
+	@Autowired
 	private ClienteRepository clienteRepository;
 	
 	public Cliente create(Cliente c) {

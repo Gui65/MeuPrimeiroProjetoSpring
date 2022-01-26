@@ -45,9 +45,13 @@ public class DemoApplication implements CommandLineRunner {
 		dataNascimento.set(2002, 12, 29);
 		Cliente cliente = new Cliente("Guilherme Matos", "guilhermematos851@gmail.com", dataNascimento,
 				Arrays.asList(produto, produto2, produto3), endereco);
-
-		clienteService.create(cliente);
 		
+		produto.setCliente(cliente);
+		produto2.setCliente(cliente);
+		produto3.setCliente(cliente);
+		
+		clienteService.create(cliente);
+
 //		Cadastrando o produto
 //		produtoRepository.save(produto);
 

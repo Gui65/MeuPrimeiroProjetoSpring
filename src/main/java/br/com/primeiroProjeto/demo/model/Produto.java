@@ -27,9 +27,8 @@ public class Produto {
 	public Produto() {
 	}
 
-	public Produto(Long id, String nomeString, int quantidade) {
+	public Produto(String nomeString, int quantidade) {
 		super();
-		this.id = id;
 		this.nomeString = nomeString;
 		this.quantidade = quantidade;
 	}

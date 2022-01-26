@@ -12,7 +12,7 @@ public class ProdutoService {
 	@Autowired
 	private ProdutoRepository produtoRepository;
 	
-	public Produto crate(Produto p) {
+	public Produto create(Produto p) {
 		return produtoRepository.save(p);
 	}
 }
